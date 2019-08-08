@@ -84,7 +84,7 @@ def load_data(city, month, day):
 
     return df
 
-def time_stats(df, month):
+def time_stats(df, month, day):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -104,8 +104,12 @@ def time_stats(df, month):
     # TO DO: display the most common day of week
 
     # finds the most common day of the week
+    if day == 'all':
         common_day = df['week_day'].mode()[0]
         print('Most common day of travel: {}'.format(common_day))
+    else:
+        common_day = df['week_day'].mode()[0]
+        print('You have chosen a single day: {}'.format(common_day))
 
     # TO DO: display the most common start hour
 
@@ -218,7 +222,7 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        time_stats(df, month)
+        time_stats(df, month, day)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df,city)
