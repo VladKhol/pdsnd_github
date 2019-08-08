@@ -221,12 +221,14 @@ def main():
 
         #shows user raw data
         raw_data = input('\nWould you like to see raw data? Enter yes or no.\n').lower()
+        lower_row = 0
         upper_row = 5
         while raw_data == 'yes':
-            print(df.iloc[: upper_row])
+            print(df.iloc[lower_row:upper_row])
+            lower_row += 5
             upper_row += 5
             raw_data = ''
-            raw_data = input('\nWould you like to see more raw data? Enter yes or no.\n').lower()
+            raw_data = input('\nWould you like to see next five rows of raw data? Enter yes or no.\n').lower()
 
 
 
