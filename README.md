@@ -7,6 +7,8 @@ Bikeshare Database
 ### Description
 This project helps investigate a database of a bike sharing company. It takes user input and shows corresponding data for three cities: Chicago, New York and Washington.
 
+Note: Washington has no data on birth year of the customer.
+
 ### Files used
 chicago.csv
 new_york_city.csv
